@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <img src="./images/Untitled drawing(4).png" alt="Paper Tasks" width="800">
+  <title>Historical Printed Ornaments: Dataset and Tasks</title>
+    <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+      text-align: center;
+      padding: 50px;
+    }
+    h1, h2 {
+      color: #333;
+    }
+    p {
+      color: #666;
+      line-height: 1.6;
+    }
+    .aligncenter {
+     text-align: center;
+     }
+  .button-container {
+    text-align: center; /* Center-align the buttons */
+  }
+
+  /* CSS for each button */
+  .image-button {
+    display: inline-block;
+    border: none;
+    padding: 0;
+    margin: 0 10px; /* Add some space between buttons */
+    background: none;
+    cursor: pointer;
+    border-radius: 10px; /* Rounded corners */
+    overflow: hidden; /* Ensure rounded corners are visible */
+    position: relative; /* Positioning for the text */
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+  }
+
+  /* CSS for the image in each button */
+  .image-button img {
+    width: 250px; /* Adjust the width of the image */
+    height: 350;
+    display: block;
+  }
+
+  /* Darken the button on hover */
+  .image-button:hover {
+    background-color: rgba(0, 0, 0, 0.2); /* Darken the background color */
+  }
+
+  /* CSS for the text in each button */
+  .image-button-text {
+    position: absolute;
+    bottom: 10px; /* Adjust the vertical position of the text */
+    left: 50%;
+    transform: translateX(-50%);
+    color: transparent; /* Initially transparent */
+    font-size: 16px;
+    font-family: 'Genova', sans-serif; /* Use Genova font */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s, color 0.3s; /* Smooth transition for visibility and color */
+  }
+
+  /* Show the text when hovering */
+  .image-button:hover .image-button-text {
+    opacity: 1; /* Show the text */
+    color: green; /* Change the text color to black */
+  }
+  .cool-button {
+  padding: 10px 20px;
+  background-color: #e74c3c;
+  text-decoration: none; /* Remove underline */
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  }
+
+     .cool-button:hover {
+  background-color: transparent;
+  border: 2px solid #e74c3c;
+  color: #e74c3c;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin: 10px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: background-color 0.3s ease;
+    }
+    .btn:hover {
+      background-color: #0056b3;
+    }
+    .authors {
+      margin-bottom: 20px;
+    }
+    .authors a {
+      color: #007bff;
+      text-decoration: none;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+    .authors a:hover {
+      color: #0056b3;
+    }
+    .abstract {
+      margin-top: 50px;
+      text-align: justify;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    .abstract h2 {
+      text-align: center;
+      color: #333;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .authors {
+      margin-top: 30px;
+    }
+    .authors a {
+      margin: 5px;
+      text-decoration: none;
+      color: #007bff;
+      font-size: 16px;
+      transition: color 0.3s ease;
+    }
+    .authors a:hover {
+      color: #0056b3;
+    }
+    .tasks-container {
+      text-align: justify;
+      max-width: 800px;
+      margin: auto;
+      margin-top: 50px;
+    }
+    .tasks {
+      margin-top: 20px;
+    }
+    .tasks h2 {
+      color: #333;
+      font-size: 24px;
+      text-align: left;
+      margin-bottom: 20px;
+    }
+    .bibtex-container {
+      text-align: left;
+      max-width: 800px;
+      margin: auto;
+      margin-top: 50px;
+    }
+    .bibtex {
+      margin-top: 20px;
+      background-color: #fff;
+      color: #bff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    .bibtex h2 {
+      color: #000;
+      font-size: 24px;
+      text-align: left;
+      margin-bottom: 20px;
+    }
+    .bibtex pre {
+      color: #fff;
+      font-size: 14px;
+      background-color: #444;
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+    .line {
+      border-bottom: 2px solid #ddd;
+      margin: 20px 0;
+    }
+    .paper-tasks img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    /* Styles for Results Section */
+    .results {
+      max-width: 800px;
+      margin: auto;
+      margin-top: 50px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    .results h2 {
+      color: #333;
+      font-size: 24px;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .result-item {
+      margin-top: 20px;
+      text-align: left;
+    }
+    .result-item h3 {
+      color: #333;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+    }
+    .acknowledgement {
+      margin-top: 50px;
+      text-align: justify;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      background-color: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+    .acknowledgement h2 {
+      text-align: center;
+      color: #333;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+    .logo-container {
+      position: absolute;
+      top: 40px;
+      right: 40px;
+    }
+    .logo-container img {
+      width: 100px; /* Adjust size as needed */
+      height: auto;
+      margin-left: 10px; /* Add margin between logos */
+      }
+    .logo-container2 {
+      position: absolute;
+      top: 40px;
+      left: 40px;
+    }
+    .logo-container2 img {
+      width: 100px; /* Adjust size as needed */
+      height: auto;
+      margin-right: 10px; /* Add margin between logos */
+      }
+     button {
+        padding: 10px 20px;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="logo-container">
+    <img src="./images/1768E67_F1PAR1L003_02-removebg-preview.png" alt="Logo 1">
+
+    <!-- Add more logos as needed -->
+  </div>
+  <div class="logo-container2">
+    <img src="./images/1768E67_F1PAR1L003_01-removebg-preview.png" alt="Logo 2">
+
+    <!-- Add more logos as needed -->
+  </div>
+  <h1>Historical Printed Ornaments: Dataset and Tasks</h1>
+  <p>ICDAR 2024</p>
+  
+ <div class="authors">
+    <a href="https://www.linkedin.com/in/sayan-chaki-lhc" target="_blank">Sayan K Chaki</a>
+    <a href="https://imagine-lab.enpc.fr/staff-members/sonat-baltaci/" target="_blank">Sonat Baltaci</a>
+    <a href="https://imagine.enpc.fr/~vincente/" target="_blank">Elliot Vincent</a>
+
+    <a href="https://home.heeere.com/" target="_blank">Rémi Emonet</a>
+    <a href="http://ihrim.ens-lyon.fr/auteur/vial-bonacci-fabienne" target="_blank">Fabienne Vial-Bonacci</a>
+    <a href="http://ihrim.ens-lyon.fr/auteur/bahier-porte-christelle" target="_blank">Christelle Bahier-Porte</a>
+    <a href="https://imagine.enpc.fr/~aubrym/" target="_blank">Mathieu Aubry</a>
+    <a href="https://orcid.org/0000-0002-1613-4594" target="_blank">Thierry Fournel</a>
+               
+    <!-- Add more authors as needed -->
+  </div>
+
+  <a href="https://github.com/mathieuaubry/roii" class="btn">Dataset & Code</a>
+    <a href="https://ro2i.hypotheses.org/" class="cool-button">ROIi Project</a>
+  <a href="link_to_arxiv" class="btn">Arxiv</a>
+    <button onclick="scrollToSection('bibtex-section')">Bibtex</button>
+    <script>
+function scrollToSection(sectionId) {
+    var section = document.getElementById(sectionId);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+}
+</script>
+
+  <div class="paper-tasks">
+    <img src="./images/ICDARE-teaser.png" alt="Paper Tasks" width="600">
+  </div>
+  <div class="abstract">
+    <h2>Abstract</h2>
+    <p>This paper aims to develop the study of historical printed ornaments with modern unsupervised computer vision. We highlight three complex tasks that are of critical interest to book historians: clustering, element discovery, and unsupervised change localization. For each of these tasks, we introduce an evaluation benchmark, and we adapt and evaluate state-of-the-art models. Our <i>Rey's Ornaments dataset</i> is designed to be a representative example of a set of ornaments historians would be interested in. It focuses on an XVIIIth century bookseller, Marc Michel Rey, providing a consistent set of ornaments with a wide diversity and representative challenges. Our results highlight the limitations of state-of-the-art models when faced with real data and show simple baselines such as k-means or congealing can outperform more sophisticated approaches.</p>
+  </div>
+  
+  <div class="tasks-container">
+    <div class="tasks">
+      <h2>Dataset and Tasks</h2>
+      <div class="line"></div> <!-- Line Separator -->
+      <p>Our Rey's Ornaments dataset is composed of three parts, giving insights into our three tasks:</p>
+      <ul>
+        <li>
+          <p>The <b>clustering dataset</b>, based on woodblock ornaments, includes 167 images of 36 different ornaments, each associated with 3 to 14 occurrences. We found that <em>DTI clustering</em> outperformed state-of-the-art clustering approaches by a large margin on a balanced subset of images, but that the k-means algorithm on the foundation features (e.g., CLIP) was on-par with DTI-clustering on the full imbalanced dataset. However, all algorithms led to less than 80% accuracy in this setting.</p>
+        </li>
+        <li>
+          <p>The <b>element discovery dataset</b> includes 100 images of composite ornaments containing 1271 elements, from a dictionary of 72 different vignettes. We found all unsupervised element discovery methods to perform poorly. We believe this stresses the potential benefit of our dataset for the community, compared to the synthetic datasets often used to evaluate unsupervised object segmentation methods.</p>
+        </li>
+        <li>
+          <p>The <b>unsupervised change localization dataset</b> includes 30 types of vignettes with four reference instances and two test instances, a normal one and one where changes have been annotated. We found that direct reconstruction-based approaches, such as congealing or VAE-based, performed poorly compared to human annotations, mostly because they are confused by the variations in inking. We see this as an invitation to better formalize the notion of changes relevant to book historians and design-associated algorithms.</p>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+  
+  <!-- Results Section -->
+  <div class="results">
+    <h2>Results</h2>
+    <div class="result-item">
+      <h3>Block ornaments & Clustering</h3>
+          <img src="./images/ICDARE-teaser(3).png" alt="Paper Tasks" width="800">
+
+    </div>
+    <div class="line"></div> <!-- Line Separator -->
+    <div class="result-item">
+      <h3>Composite ornaments & Element discovery</h3>
+          <p class="aligncenter">
+              <img src="./images/discovery.png" alt="Paper Tasks" width="600" alt="centered image" />
+</p>
+
+    </div>
+    <div class="line"></div> <!-- Line Separator -->
+    <div class="result-item">
+      <h3>Vignettes & Unsupervised change localization</h3>
+          
+<p class="aligncenter">
+    <img src="./images/Screenshot from 2024-04-17 17-26-03.png"width="600" alt="centered image" />
+</p>
+
+
+    </div>
+   </div>
+<!-- Heading -->
+<h2>Project Links</h2>
+
+<!-- Button Container -->
+<div class="button-container">
+  <!-- HTML for the image button 1 -->
+  <a href="/home/sayanchaki/Documents/ICDAR_PAPER/ICDAR-page/documents/ICDAR_ROIi-15.pdf" class="image-button">
+    <img src="./images/Screenshot from 2024-04-23 13-24-09.png" alt="Button Image 1">
+    <span class="image-button-text">Paper</span>
+  </a>
+  
+  <!-- HTML for the image button 2 -->
+  <a href="https://github.com/mathieuaubry/roii" class="image-button">
+    <img src="./images/Screenshot from 2024-04-23 13-23-05.png" alt="Button Image 2">
+    <span class="image-button-text">Code</span>
+  </a>
+  
+  <!-- HTML for the image button 3 -->
+  <a href="dataslink" class="image-button">
+    <img src="./images/data.png" alt="Button Image 3">
+    <span class="image-button-text">Dataset</span>
+  </a>
+</div>
+
+
+
+  <div id="bibtex-section" class="bibtex-container">
+    <div class="bibtex">
+      <h2>Bibtex</h2>
+      <div class="line"></div> <!-- Line Separator -->
+      <pre> @inproceedings{chaki2024historical,
+  title={{Historical Printed Ornaments: Dataset and Tasks}},
+  author={Chaki, Sayan and Baltaci, Sonat and Vincent, Elliot and 
+  Emonet, Rémi and Vial-Bonacci, Fabienne and 
+  Bahier-Porte, Christelleand Aubry, Mathieu and Fournel, Thierry},
+  booktitle={ICDAR},
+  year={2024}}</pre>
+      
+
+    </div>
+  </div>
+  
+  <div class="abstract">
+    <h2>Acknowledgement</h2>
+    <p>This work was funded by ANR ROIi project ANR-20-CE38-0005. S. Baltaci, E. Vincent and M. Aubry were supported by ERC project DISCOVER funded by the European Union’s Horizon Europe Research and Innovation program under grant agreement No. 101076028 and ANR VHS project ANR-21-CE38-0008. We thank Silya Ounoughi, Thomas Gautrais, and Vincent Ventresque for their work in the collection and annotation of the datasets, and Ségolène Albouy, Raphaël Baena, Syrine Kalleli, Ioannis Siglidis, Gurjeet Singh, Andrea Morales and Malamatenia Vlachou for valuable feedbacks. 
+
+</p>
+  </div>
+  
+  </div>
+
+</body>
+</html>
+
