@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <img src="./images/Untitled drawing(4).png" alt="Paper Tasks" width="800">
   <title>Historical Printed Ornaments: Dataset and Tasks</title>
-    <link rel="stylesheet" href="styles.css">
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -13,10 +13,6 @@
       background-color: #f9f9f9;
       text-align: center;
       padding: 50px;
-    }
-    .img-wrapper {
-      display: inline-block;
-      overflow: auto;
     }
     h1, h2 {
       color: #333;
@@ -28,99 +24,20 @@
     .aligncenter {
      text-align: center;
      }
-  .button-container {
-    /*text-align: center; /* Center-align the buttons */
-    vertical-align: center;
-  }
 
-  /* CSS for each button */
-  .image-button {
-    display: inline-block;
-    border: none;
-    padding: 0;
-    margin: 0 10px; /* Add some space between buttons */
-    background: none;
-    cursor: pointer;
-    border-radius: 10px; /* Rounded corners */
-    overflow: hidden; /* Ensure rounded corners are visible */
-    position: relative; /* Positioning for the text */
-    transition: background-color 0.3s; /* Smooth transition for hover effect */
-  }
-
-  /* CSS for the image in each button */
-  .image-button img {
-    width: 250px; /* Adjust the width of the image */
-    height: 350;
-    display: block;
-  }
-
-  /* Darken the button on hover */
-  .image-button:hover {
-    background-color: rgba(0, 0, 0, 0.2); /* Darken the background color */
-  }
-
-  /* CSS for the text in each button */
-  .image-button-text {
-    position: absolute;
-    bottom: 10px; /* Adjust the vertical position of the text */
-    left: 50%;
-    transform: translateX(-50%);
-    color: transparent; /* Initially transparent */
-    font-size: 16px;
-    font-family: 'Genova', sans-serif; /* Use Genova font */
-    opacity: 0; /* Initially hidden */
-    transition: opacity 0.3s, color 0.3s; /* Smooth transition for visibility and color */
-  }
-
-  /* Show the text when hovering */
-  .image-button:hover .image-button-text {
-    opacity: 1; /* Show the text */
-    color: black; /* Change the text color to black */
-  }
-  .cool-button {
-  padding: 10px 20px;
-  background-color: #e74c3c;
-  text-decoration: none; /* Remove underline */
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  }
-
-     .cool-button:hover {
-  background-color: transparent;
-  border: 2px solid #e74c3c;
-  color: #e74c3c;
-    }
     .btn {
+      display: inline-block;
       padding: 10px 20px;
+      margin: 10px;
       background-color: #007bff;
       color: #fff;
-      border: none;
       text-decoration: none;
       border-radius: 5px;
-      cursor: pointer;
       font-size: 16px;
       transition: background-color 0.3s ease;
     }
     .btn:hover {
-      background-color: transparent;
-      border: 2px solid #007bff;
-      color: #007bff;
-    }
-    .authors {
-      margin-bottom: 20px;
-    }
-    .authors a {
-      color: #007bff;
-      text-decoration: none;
-      font-size: 16px;
-      transition: color 0.3s ease;
-    }
-    .authors a:hover {
-      color: #0056b3;
+      background-color: #0056b3;
     }
     .abstract {
       margin-top: 50px;
@@ -164,10 +81,11 @@
     .tasks h2 {
       color: #333;
       font-size: 24px;
-      text-align: center;
+      text-align: left;
       margin-bottom: 20px;
     }
     .bibtex-container {
+      text-align: left;
       max-width: 800px;
       margin: auto;
       margin-top: 50px;
@@ -181,9 +99,9 @@
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     }
     .bibtex h2 {
-      text-align: center;
       color: #000;
       font-size: 24px;
+      text-align: left;
       margin-bottom: 20px;
     }
     .bibtex pre {
@@ -199,8 +117,7 @@
       margin: 20px 0;
     }
     .paper-tasks img {
-      display: inline-block;
-      overflow: hidden;
+      display: block;
       margin-left: auto;
       margin-right: auto;
       margin-top: 20px;
@@ -225,14 +142,13 @@
     }
     .result-item {
       margin-top: 20px;
-      margin-right: auto;
-      margin-left: auto;
+      text-align: left;
     }
     .result-item h3 {
       color: #333;
       font-size: 20px;
       margin-bottom: 10px;
-      text-align: center;
+    }
     }
     .acknowledgement {
       margin-top: 50px;
@@ -251,91 +167,20 @@
       font-size: 24px;
       margin-bottom: 20px;
     }
-
-    .logo-header img {
-      display: inline-block;
-      overflow: hidden;
-      width: auto; /* Adjust size as needed */
-      height: auto;
-      margin-right: 120px; /* Add margin between logos */
-      margin-left: 120px;
-      display: block;
-      }
-     button {
-        padding: 10px 20px;
-        font-size: 18px;
-        cursor: pointer;
-    }
-    .logo-container img {
-      display: inline-block;
-      overflow: hidden;
-      width: 100px; /* Adjust size as needed */
-      height: auto;
-      margin-left: 10px; /* Add margin between logos */
-      display: block;
-      }
-    .logo-container2 {
-    }
-    .logo-container2 img {
-      display: inline-block;
-      overflow: hidden;
-      width: 100px; /* Adjust size as needed */
-      height: auto;
-      margin-right: 10px; /* Add margin between logos */
-      display: block;
-      }
-
   </style>
 </head>
 <body>
-      <div class="logo-header" sytle = "position: absolute">
-          <img src="./images/Untitled drawing(4).png">
-      </div>
-  <div class="logo-container" sytle = "position: absolute">
-    <img src="./images/1768E67_F1PAR1L003_02-removebg-preview.png" alt="Logo 1">
-
-  </div>
-  <div class="logo-container2" sytle = "position: absolute">
-    <img src="./images/1768E67_F1PAR1L003_01-removebg-preview.png" alt="Logo 2">
-
-    <!-- Add more logos as needed -->
-  </div>
   <h1>Historical Printed Ornaments: Dataset and Tasks</h1>
   <p>ICDAR 2024</p>
-  
- <div class="authors">
-    <a href="https://www.linkedin.com/in/sayan-chaki-lhc" target="_blank">Sayan K Chaki</a>
-    <a href="https://imagine-lab.enpc.fr/staff-members/sonat-baltaci/" target="_blank">Sonat Baltaci</a>
-    <a href="https://imagine.enpc.fr/~vincente/" target="_blank">Elliot Vincent</a>
-
-    <a href="https://home.heeere.com/" target="_blank">Rémi Emonet</a>
-    <a href="http://ihrim.ens-lyon.fr/auteur/vial-bonacci-fabienne" target="_blank">Fabienne Vial-Bonacci</a>
-    <a href="http://ihrim.ens-lyon.fr/auteur/bahier-porte-christelle" target="_blank">Christelle Bahier-Porte</a>
-    <a href="https://imagine.enpc.fr/~aubrym/" target="_blank">Mathieu Aubry</a>
-    <a href="https://orcid.org/0000-0002-1613-4594" target="_blank">Thierry Fournel</a>
-               
-    <!-- Add more authors as needed -->
-  </div>
-
-  <a href="https://github.com/printed-ornaments/reys-dataset" class="btn">Dataset & Code</a>
-    <a href="https://ro2i.hypotheses.org/" class="cool-button">ROIi Project</a>
-  <a href="link_to_arxiv" class="btn">ArXiv</a>
-    <button onclick="scrollToSection('bibtex-section')" class="cool-button">Bibtex</button>
-    <script>
-function scrollToSection(sectionId) {
-    var section = document.getElementById(sectionId);
-    if (section) {
-        section.scrollIntoView({ behavior: 'smooth' });
-    }
-}
-</script>
-
+  <a href="link_to_pdf" class="btn">PDF</a>
+  <a href="link_to_github_repo" class="btn">GitHub Repo</a>
+  <a href="link_to_arxiv" class="btn">Arxiv Link</a>
   <div class="paper-tasks">
-    <img src="https://imagine.enpc.fr/~sonat.baltaci/roii-images-github/teaser.png" width="600">
+    <img src="./images/ICDARE-teaser.png" alt="Paper Tasks" width="600">
   </div>
   <div class="abstract">
     <h2>Abstract</h2>
-    <p>This paper aims to develop the study of historical printed ornaments with modern unsupervised computer vision. We highlight three complex tasks that are of critical interest to book historians: clustering, element discovery, and unsupervised change localization. For each of these tasks, we introduce an evaluation benchmark, and we adapt and evaluate state-of-the-art models. Our <i>Rey's Ornaments dataset</i> is designed to be a representative example of a set of ornaments historians would be interested in. It focuses on an XVIIIth century bookseller, Marc-Michel Rey, providing a consistent set of ornaments with a wide diversity and representative challenges. Our results highlight the limitations of state-of-the-art models when faced with real data and show simple baselines such as k-means or congealing can outperform more sophisticated approaches.</p>
+    <p>This paper aims to develop the study of historical printed ornaments with modern unsupervised computer vision. We highlight three complex tasks that are of critical interest to book historians: clustering, element discovery, and unsupervised change localization. For each of these tasks, we introduce an evaluation benchmark, and we adapt and evaluate state-of-the-art models. Our <i>Rey's Ornaments dataset</i> is designed to be a representative example of a set of ornaments historians would be interested in. It focuses on an XVIIIth century bookseller, Marc Michel Rey, providing a consistent set of ornaments with a wide diversity and representative challenges. Our results highlight the limitations of state-of-the-art models when faced with real data and show simple baselines such as k-means or congealing can outperform more sophisticated approaches.</p>
   </div>
   
   <div class="tasks-container">
@@ -345,13 +190,13 @@ function scrollToSection(sectionId) {
       <p>Our Rey's Ornaments dataset is composed of three parts, giving insights into our three tasks:</p>
       <ul>
         <li>
-          <p>The <b>clustering dataset</b>, based on woodblock ornaments, includes 167 images of 36 different ornaments, each associated with 3 to 14 occurrences. We found that DTI Clustering [1] outperformed state-of-the-art clustering approaches by a large margin on a balanced subset of images, but that the k-means algorithm [2] on the foundation features (e.g., CLIP [3]) was on-par with DTI Clustering on the full imbalanced dataset. However, all algorithms led to less than 80% accuracy in this setting.</p>
+          <p>The <b>clustering dataset</b>, based on woodblock ornaments, includes 167 images of 36 different ornaments, each associated with 3 to 14 occurrences. We found that <em>DTI clustering</em> outperformed state-of-the-art clustering approaches by a large margin on a balanced subset of images, but that the k-means algorithm on the foundation features (e.g., CLIP) was on-par with DTI-clustering on the full imbalanced dataset. However, all algorithms led to less than 80% accuracy in this setting.</p>
         </li>
         <li>
           <p>The <b>element discovery dataset</b> includes 100 images of composite ornaments containing 1271 elements, from a dictionary of 72 different vignettes. We found all unsupervised element discovery methods to perform poorly. We believe this stresses the potential benefit of our dataset for the community, compared to the synthetic datasets often used to evaluate unsupervised object segmentation methods.</p>
         </li>
         <li>
-          <p>The <b>unsupervised change localization dataset</b> includes 30 types of vignettes with four reference instances and two test instances, a normal one and one where changes have been annotated. We found that direct reconstruction-based approaches, such as congealing [4] or VAE-based [5], performed poorly compared to human annotations, mostly because they are confused by the variations in inking. We see this as an invitation to better formalize the notion of changes relevant to book historians and design-associated algorithms.</p>
+          <p>The <b>unsupervised change localization dataset</b> includes 30 types of vignettes with four reference instances and two test instances, a normal one and one where changes have been annotated. We found that direct reconstruction-based approaches, such as congealing or VAE-based, performed poorly compared to human annotations, mostly because they are confused by the variations in inking. We see this as an invitation to better formalize the notion of changes relevant to book historians and design-associated algorithms.</p>
         </li>
       </ul>
 
@@ -362,58 +207,33 @@ function scrollToSection(sectionId) {
   <div class="results">
     <h2>Results</h2>
     <div class="result-item">
-      <h3>Block ornaments & Clustering</h3>
-      <p class="aligncenter">
-          <img src="./images/clustering_qual.png" width="800"></p>
+      <h3>Clustering</h3>
+          <img src="./images/ICDARE-teaser(3).png" alt="Paper Tasks" width="800">
+
     </div>
     <div class="line"></div> <!-- Line Separator -->
     <div class="result-item">
-      <h3>Element discovery</h3>
-      <p class="aligncenter">
-          <img src="./images/discovery_qual.png" width="600"></p>
+      <h3>Decomposition</h3>
+          <img src="./images/discovery.png" alt="Paper Tasks" width="800">
     </div>
     <div class="line"></div> <!-- Line Separator -->
     <div class="result-item">
-      <h3>Unsupervised change localization</h3>
-      <p class="aligncenter">
-    <img src="./images/change_qual.png" width="600"></p>
+      <h3>Change Localization</h3>
+          
+<p class="aligncenter">
+    <img src="./images/Screenshot from 2024-04-17 17-26-03.png"width="600" alt="centered image" />
+</p>
+
+
     </div>
    </div>
-<!-- Heading -->
-<h2>Project Links</h2>
-
-<!-- Button Container -->
-<div class="button-container">
-  <!-- HTML for the image button 1 -->
-  <a href="arxiv-link" class="image-button">
-    <img src="./images/paper.png" alt="Button Image 1" width="200px" height="275px">
-    <span class="image-button-text">Paper</span>
-  </a>
-  
-  <!-- HTML for the image button 2 -->
-  <a href="https://github.com/printed-ornaments/reys-dataset" class="image-button">
-    <img src="./images/reys-dataset.png" alt="Button Image 2" width="200px" height="275px">
-    <span class="image-button-text">Code</span>
-  </a>
-  
-  <!-- HTML for the image button 3 -->
-  <a href="https://drive.google.com/drive/folders/1FBOrEBukX8j_K9wO8LiRlCJAnH_ivZW6?usp=sharing" class="image-button">
-    <img src="./images/data.jpg" alt="Button Image 3" width="200px" height="275px">
-    <span class="image-button-text">Dataset</span>
-  </a>
-</div>
-
-
-
-  <div id="bibtex-section" class="bibtex-container">
+  <div class="bibtex-container">
     <div class="bibtex">
       <h2>Bibtex</h2>
       <div class="line"></div> <!-- Line Separator -->
-      <pre> @inproceedings{chaki2024historical,
-  title={Historical Printed Ornaments: Dataset and Tasks},
-  author={Chaki, Sayan and Baltaci, Sonat and Vincent, Elliot
-  and Emonet, Rémi and Vial-Bonacci, Fabienne and Bahier-Porte, Christelle
-  and Aubry, Mathieu and Fournel, Thierry},
+      <pre> @inproceedings{chaki2024roiidataset,
+  title={{Historical Printed Ornaments: Dataset and Tasks}},
+  author={Chaki, Sayan and Baltaci, Sonat and Vincent, Elliot and Aubry, Mathieu and Fournel, Thierry and Bahier-Porte, Christelle, and Emonet, Rémi and Fabienne},
   booktitle={ICDAR},
   year={2024}}</pre>
       
@@ -423,7 +243,7 @@ function scrollToSection(sectionId) {
   
   <div class="abstract">
     <h2>Acknowledgement</h2>
-    <p>This work was funded by ANR ROIi project ANR-20-CE38-0005. S. Baltaci, E. Vincent, and M. Aubry were supported by ERC project DISCOVER funded by the European Union’s Horizon Europe Research and Innovation program under grant agreement No. 101076028 and ANR VHS project ANR-21-CE38-0008. We thank Silya Ounoughi, Thomas Gautrais, and Vincent Ventresque for their work in the collection and annotation of the datasets, and Ségolène Albouy, Raphaël Baena, Syrine Kalleli, Ioannis Siglidis, Gurjeet Singh, Andrea Morales and Malamatenia Vlachou for valuable feedbacks. 
+    <p>This work was funded by ANR ROIi project ANR-20-CE38-0005. S. Baltaci, E. Vincent and M. Aubry were supported by ERC project DISCOVER funded by the European Union’s Horizon Europe Research and Innovation program under grant agreement No. 101076028 and ANR VHS project ANR-21-CE38-0008. We thank Silya Ounoughi, Thomas Gautrais, and Vincent Ventresque for their work in the collection and annotation of the datasets, and Ségolène Albouy, Raphaël Baena, Syrine Kalleli, Ioannis Siglidis, Gurjeet Singh, Andrea Morales and Malamatenia Vlachou for valuable feedbacks. 
 
 </p>
   </div>
@@ -432,4 +252,3 @@ function scrollToSection(sectionId) {
 
 </body>
 </html>
-
