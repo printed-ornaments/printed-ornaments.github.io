@@ -31,7 +31,7 @@
     }
 
     .button-container {
-      vertical-align: center;
+      display: inline-block;
       margin-bottom: 20px;
     }
 
@@ -40,7 +40,7 @@
       display: inline-block;
       border: none;
       padding: 0;
-      margin: 0 10px;
+      margin: 0 5px;
       /* Add some space between buttons */
       background: none;
       cursor: pointer;
@@ -56,9 +56,6 @@
 
     /* CSS for the image in each button */
     .image-button img {
-      width: 250px;
-      /* Adjust the width of the image */
-      height: 350;
       display: block;
     }
 
@@ -96,10 +93,12 @@
     }
 
     .cool-button {
+      display: inline-block;
+      overflow: hidden;
+      position: relative;
       padding: 10px 20px;
       background-color: #e74c3c;
       text-decoration: none;
-      /* Remove underline */
       color: #ffffff;
       border: none;
       border-radius: 5px;
@@ -115,6 +114,9 @@
     }
 
     .button-blue {
+      display: inline-block;
+      overflow: hidden;
+      position: relative;
       padding: 10px 20px;
       background-color: #007bff;
       text-decoration: none;
@@ -270,10 +272,12 @@
   <a href="https://imagine.enpc.fr/~aubrym/" target="_blank">Mathieu Aubry</a>
   <a href="https://orcid.org/0000-0002-1613-4594" target="_blank">Thierry Fournel</a>
 </div>
-<a href="https://github.com/printed-ornaments/reys-dataset" class="button-blue">Dataset & Code</a>
-<a href="https://ro2i.hypotheses.org/" class="cool-button">ROIi Project</a>
-<a href="link_to_arxiv" class="button-blue">ArXiv</a>
-<a onclick="scrollToSection('bibtex-section')" class="cool-button">Bibtex</a>
+<div class="button-container">
+  <a href="https://github.com/printed-ornaments/reys-dataset" class="button-blue">Dataset & Code</a>
+  <a href="https://ro2i.hypotheses.org/" class="cool-button">ROIi Project</a>
+  <a href="link_to_arxiv" class="button-blue">ArXiv</a>
+  <a onclick="scrollToSection('bibtex-section')" class="cool-button">Bibtex</a>
+</div>
 <script>
   function scrollToSection(sectionId) {
     var section = document.getElementById(sectionId);
